@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="refresh" content="1000" />
+	<meta charset="UTF-8" />
+	<meta name="author" content="Hardiansyah, W3Schools.com, GitHub.com, Stackoverflow.com, csstrick.com" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<title>Hubungan</title>
+	<link rel="stylesheet" type="text/css" href="s.css">
+	<style type="text/css" media="all">
+	
+	</style>
+</head>
+
+<body onload="startTime()">
+	<div class="header">
+		<marquee scrollamount="6" loop="9">♪ Whitney Houston - I Will Always Love You</marquee>
+	</div>
+
+	<div class="layer-kiri" align="center">
+		<img class="foto-1" src="Media/hardi.jpg">
+		<p class="nama">Hardiansyah</p>
+	</div>
+
+	<div class="layer-kanan" align="center">
+		<img class="foto-2" src="Media/remaar.jpg">
+		<p class="nama">Remaar Martin</p>
+	</div>
+	
+	<div class="footer">
+		<b class="f-0">Menuju Mensiversarry yang ke 5 Bulan:</b>
+		<p class="f-1" id="menuju"></p>
+	</div>
+	
+	<table align="center">
+		<tr>
+			<th class="t-1" id="t-1">Statis Baik</th>
+			<th class="t-1" id="t-1">Value</th>
+			<th class="t-1" id="t-1">Poin</th>
+		</tr>
+		<tr>
+			<td id="t-2">Tertawa</td>
+			<td id="t-2">8x</td>
+			<td id="t-2">+5 / +40 Poin</td>
+		</tr>
+		<tr>
+			<td id="t-3">Kencan</td>
+			<td id="t-3">6x</td>
+			<td id="t-3">+10 / +60 Poin</td>
+		</tr>
+		<tr>
+			<td id="t-4">Kenthu</td>
+			<td id="t-4">3x</td>
+			<td id="t-4">+20 / +60 Poin</td>
+		</tr>
+		<tr>
+			<td id="t-5"><button onclick="total_baik()">Jumblah</button></td>
+			<td id="t-5">+</th>
+			<td id="t-5"><span id="poin_baik"></span></td>
+		</tr>
+		<tr>
+			<th class="t-1" id="t-1">Statis Buruk</th>
+			<th class="t-1" id="t-1">Value</th>
+			<th class="t-1" id="t-1">Poin</th>
+		</tr>
+		<tr>
+			<td id="t-2">Bertengkar</td>
+			<td id="t-2">2x</td>
+			<td id="t-2">-8 / -16 Poin</td>
+		</tr>
+		<tr>
+			<td id="t-3">Tangisan</td>
+			<td id="t-3">0</td>
+			<td id="t-3">0</td>
+		</tr>
+		<tr>
+			<td id="t-4">Badmood</td>
+			<td id="t-4">6x</th>
+			<td id="t-4">-5 / -30 Poin</td>
+		</tr>
+		<tr>
+			<td id="t-5"><button onclick="total_buruk()">Jumblah</button></td>
+			<td id="t-5">-</th>
+			<td id="t-5"><span id="poin_buruk"></span></td>
+		</tr>
+	</table>
+	
+	<table align="center">
+		<tr>
+			<th class="t-1" id="t-1">Status</th>
+			<th class="t-1" id="t-1">Value</th>
+		</tr>
+		<tr>
+			<td id="t-2">Berpacaran Sejak</td>
+			<td id="t-2">1 Februari, 2020</td>
+		</tr>
+		<tr>
+			<td id="t-3">Lamanya Hubungan</td>
+			<td id="t-3">NaN</td>
+		</tr>
+		<tr>
+			<td id="t-4">Target Menikah</td>
+			<td id="t-4"><span id="target"></span>(2021)</td>
+		</tr>
+		<tr>
+			<td id="t-5">Waktu saat ini</td>
+			<td id="t-5"><span id="jam"></span></td>
+		</tr>
+		<tr>
+			<td id="t-6">Tanggal saat ini</td>
+			<td id="t-6"><span id="tanggal"></span></td>
+		</tr>
+	</table>
+	
+	<p class="caption" id="quotation"></p>
+	<iframe src="Audio.ogg" allow="autoplay" style="display: none;" id="iframeAudio"></iframe>
+	
+	<br>
+	<br>
+	<br>
+	
+	<script>
+	const quotes = [
+		{
+			"quote": "Kita Ada Karna Cinta", "source": "Pop"
+		},
+		{
+			"quote": "Bak Bidadari Turun Dari Langit", "source": "Pop"
+		},
+		{
+			"quote": "Jangan Ada Perpisahan Di Antara Kita", "source": "Pop"
+		},
+		{
+			"quote": "Aku Mencintaimu", "source": "Pop"
+		},
+		{
+			"quote": "Tetaplah Bersamaku", "source": "Pop"
+		},
+		{
+			"quote": "Pujaan Hati", "source": "Pop"
+		},
+		{
+			"quote": "Kau Lebih Dari Indah", "source": "Pop"
+		},]
+	function randomQuote() {
+		let random = quotes[Math.floor(Math.random() * quotes.length)];
+		quotation.innerText = `"${random.quote}"`;
+		source.innerText = random.source;
+	}
+	setInterval(randomQuote, 4000);
+	</script>
+	
+	<script>
+	// Set the date we're counting down to
+	var target = new Date("Jan 01, 2021 00:00:00").getTime();
+	// Update the count down every 1 second
+	var xTarget = setInterval(function() {
+	// Get today's date and time
+	var nTarget = new Date().getTime();
+	// Find the distance between now and the count down date
+	var distance = target - nTarget;
+	// Time calculations for days, hours, minutes and seconds
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+	// Display the result in the element with id="demo"
+	document.getElementById("target").innerHTML = days + "H " + hours + "J " + minutes + "M " + seconds + "D ";
+	// If the count down is finished, write some text
+	if (distance < 0) {
+		clearInterval(xTarget);
+		document.getElementById("target").innerHTML = "Congratulation! Happy Weeding! 👰💝🤵";
+	}
+	}, 1000);
+	</script>
+	
+	<script>
+	// Set the date we're counting down to
+	var mensiv = new Date("Jul 01, 2020 00:00:00").getTime();
+	// Update the count down every 1 second
+	var xMensiv = setInterval(function() {
+	// Get today's date and time
+	var nMensiv = new Date().getTime();
+	// Find the distance between now and the count down date
+	var distance = mensiv - nMensiv;
+	// Time calculations for days, hours, minutes and seconds
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+	// Display the result in the element with id="demo"
+	document.getElementById("menuju").innerHTML = days + "Hari " + hours + "Jam " + minutes + "Menit " + seconds + "Detik ";
+	// If the count down is finished, write some text
+	if (distance < 0) {
+		clearInterval(xMensiv);
+		document.getElementById("menuju").innerHTML = "Happy Hardian & Remaar Day's! 🥰💖";
+	}}, 1000);
+	</script>
+	
+	<script>
+	function startTime() {
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		m = checkTime(m);
+		s = checkTime(s);
+		document.getElementById("jam").innerHTML = h + ":" + m + ":" + s;
+		var t = setTimeout(startTime, 500);
+	}
+	function checkTime(i) {
+		if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
+		return i;
+	}
+	</script>
+	
+	<script>
+	var dt = new Date();
+	document.getElementById("tanggal").innerHTML = dt.toLocaleDateString();
+	</script>
+	
+	<script>
+	function total_baik() {
+		var x = 40 + 60  + 60 ;
+		document.getElementById("poin_baik").innerHTML = " " + x;
+	}
+	</script>
+	<script>
+	function total_buruk() {
+		var x = 150 - 16 - 30 ;
+		document.getElementById("poin_buruk").innerHTML = " " + x;
+	}
+	</script>
+	
+	<script>
+	var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+	if (!isChrome) {
+		$('#iframeAudio').remove()
+	} else {
+		$('#playAudio').remove() // just to make sure that it will not have 2x audio in the background
+	}
+	</script>
+</body>
+</html>

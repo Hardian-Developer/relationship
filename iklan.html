@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta charset="UTF-8" />
+	<meta name="author" content="Hardiansyah" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<title>Iklan</title>
+	<link rel="stylesheet" href="iklan.css" type="text/css" media="all">
+</head>
+
+<body>
+	<h1 class="title">Ini Iklan</h1>
+	<img src="Media/banner1.jpeg" class="banner">
+		<br>
+	<img src="Media/banner1.jpg" class="banner">
+	
+	<hr width="90%" margin="4px" size="1px" color="#888">
+	
+	<p class="desc">Link akan muncul setelah:</p>
+	<span id="countdown" class="timer"></span>
+	
+	<script>
+	var seconds = 10;
+	function secondPassed() {
+		var minutes = Math.round((seconds - 30)/60);
+		var remainingSeconds = seconds % 60;
+		if (remainingSeconds < 10) {
+			remainingSeconds = "0" + remainingSeconds;
+		}
+		document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+		if (seconds == 0) {
+			clearInterval(countdownTimer);
+			document.getElementById('countdown').innerHTML = "<a href='relationship.html'><button class='buka'>Buka</button></a>";
+		} else {
+			seconds--;
+		}}
+		var countdownTimer = setInterval('secondPassed()', 1000);
+	</script>
+</body>
+</html>

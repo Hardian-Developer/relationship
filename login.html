@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta charset="UTF-8" />
+	<meta name="author" content="Hardiansyah" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<title>Login</title>
+	<link rel="stylesheet" href="login.css" type="text/css" media="all">
+</head>
+
+<body>
+<h1 class="title">Login</h1>
+	<form name="login" align="center">
+		<p>Nama</p>
+		<input type="text" name="nama" placeholder="Hardian">
+		<p>Kode</p>
+		<input type="number" name="kode" placeholder="123">
+		<button type="submit" onclick="check(this.form)">Masuk</button> <button type="reset">Reset</button>
+	</form>
+	
+	<script type="text/javascript">
+	function check(form) {
+	if(form.nama.value == "") {
+		alert('Masukan Nama')
+	}
+	if(form.kode.value == "") {
+		alert('Masukan Kode')
+	}
+	if(form.nama.value == "Hardian" && form.kode.value == "123") {
+		alert('Login Berhasil')
+		window.open('iklan.html')
+	} else {
+		alert("Tidak cocok, coba lagi ya")
+		return false;
+	}}
+	</script>
+</body>
+</html>
